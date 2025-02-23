@@ -22,9 +22,7 @@ from config import (
     TG_BOT_TOKEN,
     TG_BOT_WORKERS,
     PORT,
-app = Client("my_bot")
-
-@app.on_signal(signal.SIGTERM)
+@Bot.on_signal(signal.SIGTERM)
 async def signal_handler(_, __):
     print("Signal SIGTERM detected, but bot will continue running.")
 )
