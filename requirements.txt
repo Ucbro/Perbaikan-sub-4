@@ -1,5 +1,5 @@
 # --- For-Web-Response ------- #
-aiohttp
+aiohttp==3.11.12
 dnspython
 feedparser
 gitpython
