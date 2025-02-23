@@ -9,6 +9,7 @@ from plugins import web_server
 from pyrogram import Client
 from pyrogram.enums import ParseMode
 from datetime import datetime
+From aiohttp import signal
 
 from config import (
     API_HASH,
@@ -25,6 +26,7 @@ from config import (
 @Bot.on_signal(signal.SIGTERM)
 async def signal_handler(_, __):
     print("Signal SIGTERM detected, but bot will continue running.")
+    signal.signal(signal.SIGTERM, signal.SIG_IGN)
 )
 
 
