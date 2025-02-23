@@ -12,4 +12,3 @@ Pyromod==1.5
 speedtest-cli
 TgCrypto
 wget
-Client
