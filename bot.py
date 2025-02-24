@@ -9,7 +9,15 @@ from plugins import web_server
 from pyrogram import Client
 from pyrogram.enums import ParseMode
 from datetime import datetime
-import signal
+
+Bot = Client("my_bot")
+
+@Bot.on_signal(signal.SIGTERM)
+async def signal_handler(_, __):
+    print("Signal SIGTERM detected, shutting down bot...")
+    await Bot.stop()
+
+Bot.run()
 
 from config import (
     API_HASH,
@@ -23,10 +31,6 @@ from config import (
     TG_BOT_TOKEN,
     TG_BOT_WORKERS,
     PORT,
-@Bot.on_signal(signal.SIGTERM)
-async def signal_handler(_, __):
-    print("Signal SIGTERM detected, but bot will continue running.")
-    signal.signal(signal.SIGTERM, signal.SIG_IGN)
 )
 
 
