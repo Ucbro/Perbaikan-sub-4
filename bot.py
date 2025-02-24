@@ -9,7 +9,7 @@ from plugins import web_server
 from pyrogram import Client
 from pyrogram.enums import ParseMode
 from datetime import datetime
-From aiohttp import signal
+import signal
 
 from config import (
     API_HASH,
